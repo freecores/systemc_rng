@@ -46,6 +46,9 @@
 // CVS Revision History
 //
 // $Log: not supported by cvs2svn $
+// Revision 1.2  2004/08/30 17:01:50  jcastillo
+// Used indent command
+//
 // Revision 1.1.1.1  2004/08/19 14:27:14  jcastillo
 // First import
 //
@@ -61,8 +64,7 @@ rng::combinate ()
     }
   else
     {
-      number_o.write (LFSR_reg.read ().range (31, 0) ^ CASR_reg.read ().
-		      range (31, 0));
+      number_o.write (LFSR_reg.read ().range (31, 0) ^ CASR_reg.read ().range (31, 0));
     }
 }
 
@@ -144,7 +146,7 @@ void
 rng::CASR ()
 {
 
-  sc_uint < 43 > CASR_var, CASR_out;
+  sc_uint < 37 > CASR_var, CASR_out;
 
   if (!reset.read ())
     {
