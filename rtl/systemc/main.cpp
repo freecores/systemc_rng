@@ -46,11 +46,18 @@
 // CVS Revision History
 //
 // $Log: not supported by cvs2svn $
+// Revision 1.1.1.1  2004/08/19 14:27:14  jcastillo
+// First import
+//
 
 #include "systemc.h"
-#include "iostream.h"
 #include "stimulus.h"
 #include "rng.h"
+
+#ifdef __GNUC__
+  #include "iostream.h"
+#endif
+
 
 int sc_main(int argc, char* argv[]){
 		
