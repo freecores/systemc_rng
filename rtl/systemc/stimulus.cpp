@@ -46,24 +46,30 @@
 // CVS Revision History
 //
 // $Log: not supported by cvs2svn $
+// Revision 1.1.1.1  2004/08/19 14:27:14  jcastillo
+// First import
+//
 
 #include "systemc.h"
 #include "stimulus.h"
-	  
-void stimulus::tb(){
-   
-	wait(clk->posedge_event());
-    reset.write(0);
-	wait(clk->posedge_event());
-	reset.write(1);
-	wait(clk->posedge_event());
-	loadseed_o.write(1);
-	seed_o.write(0x12678);
-	wait(clk->posedge_event());
-	loadseed_o.write(0);
-	for(;;){
-	  wait(clk->posedge_event());
-	  cout << (unsigned int)number_i.read() << endl;
-	}
-	 
- }
+
+void
+stimulus::tb ()
+{
+
+  wait (clk->posedge_event ());
+  reset.write (0);
+  wait (clk->posedge_event ());
+  reset.write (1);
+  wait (clk->posedge_event ());
+  loadseed_o.write (1);
+  seed_o.write (0x12678);
+  wait (clk->posedge_event ());
+  loadseed_o.write (0);
+  for (;;)
+    {
+      wait (clk->posedge_event ());
+      cout << (unsigned int) number_i.read () << endl;
+    }
+
+}

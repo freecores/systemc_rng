@@ -46,6 +46,9 @@
 // CVS Revision History
 //
 // $Log: not supported by cvs2svn $
+// Revision 1.2  2004/08/25 15:32:23  jcastillo
+// Corrected to run under MSVC60
+//
 // Revision 1.1.1.1  2004/08/19 14:27:14  jcastillo
 // First import
 //
@@ -55,39 +58,41 @@
 #include "rng.h"
 
 #ifdef __GNUC__
-  #include "iostream.h"
+#include "iostream.h"
 #endif
 
 
-int sc_main(int argc, char* argv[]){
-		
-	sc_clock clk("clk",1,SC_US);
-	
-	rng *rng1;
-	stimulus *st1;
-    
-    rng1=new rng("rng");
-	st1=new stimulus("stimulus");
-		
-	sc_signal<bool> reset;
-	sc_signal<bool> loadseed_i;
-	sc_signal<sc_uint<32> > seed_i;
-	sc_signal<sc_uint<32> > number_o;
-	
-	rng1->clk(clk);
-	rng1->reset(reset);
-	rng1->loadseed_i(loadseed_i);
-	rng1->seed_i(seed_i);
-	rng1->number_o(number_o);
-	
-	st1->clk(clk);
-	st1->reset(reset);
-	st1->loadseed_o(loadseed_i);
-	st1->seed_o(seed_i);
-	st1->number_i(number_o);
+int
+sc_main (int argc, char *argv[])
+{
 
-    sc_start(-1);
+  sc_clock clk ("clk", 1, SC_US);
 
-	return 0;
-	  
-  }
+  rng *rng1;
+  stimulus *st1;
+
+  rng1 = new rng ("rng");
+  st1 = new stimulus ("stimulus");
+
+  sc_signal < bool > reset;
+  sc_signal < bool > loadseed_i;
+  sc_signal < sc_uint < 32 > >seed_i;
+  sc_signal < sc_uint < 32 > >number_o;
+
+  rng1->clk (clk);
+  rng1->reset (reset);
+  rng1->loadseed_i (loadseed_i);
+  rng1->seed_i (seed_i);
+  rng1->number_o (number_o);
+
+  st1->clk (clk);
+  st1->reset (reset);
+  st1->loadseed_o (loadseed_i);
+  st1->seed_o (seed_i);
+  st1->number_i (number_o);
+
+  sc_start (-1);
+
+  return 0;
+
+}

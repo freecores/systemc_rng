@@ -46,38 +46,43 @@
 // CVS Revision History
 //
 // $Log: not supported by cvs2svn $
+// Revision 1.1.1.1  2004/08/19 14:27:14  jcastillo
+// First import
+//
 #include "systemc.h"
 
-SC_MODULE(rng){
+SC_MODULE (rng)
+{
 
-	   sc_in<bool> clk;
-	   sc_in<bool> reset;
-	  
-	   sc_in<bool> loadseed_i;
-	   sc_in<sc_uint<32> > seed_i;
-	  
-	   sc_out<sc_uint<32> > number_o;
-	
-	   sc_signal<sc_uint<43> > LFSR_reg;
-	   sc_signal<sc_uint<37> > CASR_reg;
-	
-	   void CASR();
-	   void LFSR();
-	   void combinate();
-	
-	   SC_CTOR(rng){
-		   		   
-		   SC_METHOD(CASR);
-		   sensitive_pos << clk;
-		   sensitive_neg << reset;
-	 
-		   SC_METHOD(LFSR);
-		   sensitive_pos << clk;
-		   sensitive_neg << reset;
-		     
-		   SC_METHOD(combinate);
-		   sensitive_pos << clk;
-		   sensitive_neg << reset;
-	 
-	   }
-   };
+  sc_in < bool > clk;
+  sc_in < bool > reset;
+
+  sc_in < bool > loadseed_i;
+  sc_in < sc_uint < 32 > >seed_i;
+
+  sc_out < sc_uint < 32 > >number_o;
+
+  sc_signal < sc_uint < 43 > >LFSR_reg;
+  sc_signal < sc_uint < 37 > >CASR_reg;
+
+  void CASR ();
+  void LFSR ();
+  void combinate ();
+
+  SC_CTOR (rng)
+  {
+
+    SC_METHOD (CASR);
+    sensitive_pos << clk;
+    sensitive_neg << reset;
+
+    SC_METHOD (LFSR);
+    sensitive_pos << clk;
+    sensitive_neg << reset;
+
+    SC_METHOD (combinate);
+    sensitive_pos << clk;
+    sensitive_neg << reset;
+
+  }
+};

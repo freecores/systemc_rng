@@ -46,27 +46,35 @@
 // CVS Revision History
 //
 // $Log: not supported by cvs2svn $
+// Revision 1.2  2004/08/30 17:01:50  jcastillo
+// Used indent command
+//
+// Revision 1.1.1.1  2004/08/19 14:27:14  jcastillo
+// First import
+//
 
 #include "systemc.h"
 
-SC_MODULE(stimulus){
+SC_MODULE (stimulus)
+{
 
-	 sc_in<bool> clk;
-	 sc_out<bool> reset;
-	
-	 sc_out<bool> loadseed_o;
-	 sc_out<sc_uint<32> > seed_o;
-     sc_in<sc_uint<32> > number_i;		
-	
-	 void tb();
-	
-	 SC_CTOR(stimulus){
-	 
-	    cout.unsetf(ios::dec);
-	    cout.setf(ios::hex);
-	    cout.setf(ios::showbase);
-	 	 
-	    SC_THREAD(tb);
-		 
-	 }
+  sc_in < bool > clk;
+  sc_out < bool > reset;
+
+  sc_out < bool > loadseed_o;
+  sc_out < sc_uint < 32 > >seed_o;
+  sc_in < sc_uint < 32 > >number_i;
+
+  void tb ();
+
+  SC_CTOR (stimulus)
+  {
+
+    cout.unsetf (ios::dec);
+    cout.setf (ios::hex);
+    cout.setf (ios::showbase);
+
+    SC_THREAD (tb);
+
+  }
 };
