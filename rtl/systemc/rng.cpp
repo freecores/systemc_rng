@@ -46,6 +46,9 @@
 // CVS Revision History
 //
 // $Log: not supported by cvs2svn $
+// Revision 1.3  2004/09/23 09:45:30  jcastillo
+// Macro removed
+//
 // Revision 1.2  2004/08/30 17:01:50  jcastillo
 // Used indent command
 //
@@ -173,7 +176,7 @@ rng::CASR ()
 	  CASR_out[31] = CASR_var[30] ^ CASR_var[32];
 	  CASR_out[30] = CASR_var[29] ^ CASR_var[31];
 	  CASR_out[29] = CASR_var[28] ^ CASR_var[30];
-	  CASR_out[28] = CASR_var[27] ^ CASR_var[29];
+	  CASR_out[28] = CASR_var[27] ^ CASR_var[28] ^ CASR_var[29];
 	  CASR_out[27] = CASR_var[26] ^ CASR_var[28];
 	  CASR_out[26] = CASR_var[25] ^ CASR_var[27];
 	  CASR_out[25] = CASR_var[24] ^ CASR_var[26];

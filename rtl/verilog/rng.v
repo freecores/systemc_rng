@@ -44,6 +44,9 @@
 // CVS Revision History
 //
 // $Log: not supported by cvs2svn $
+// Revision 1.1  2004/09/23 09:43:06  jcastillo
+// Verilog first import
+//
 
 `timescale 10ns/1ns
 
@@ -106,7 +109,7 @@ always @(posedge clk or negedge reset)
          CASR_outCASR [31]=CASR_varCASR [30]^CASR_varCASR [32];
          CASR_outCASR [30]=CASR_varCASR [29]^CASR_varCASR [31];
          CASR_outCASR [29]=CASR_varCASR [28]^CASR_varCASR [30];
-         CASR_outCASR [28]=CASR_varCASR [27]^CASR_varCASR [29];
+         CASR_outCASR [28]=CASR_varCASR [27]^CASR_varCASR [28]^CASR_varCASR [29];
          CASR_outCASR [27]=CASR_varCASR [26]^CASR_varCASR [28];
          CASR_outCASR [26]=CASR_varCASR [25]^CASR_varCASR [27];
          CASR_outCASR [25]=CASR_varCASR [24]^CASR_varCASR [26];
