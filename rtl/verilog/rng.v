@@ -44,6 +44,9 @@
 // CVS Revision History
 //
 // $Log: not supported by cvs2svn $
+// Revision 1.2  2005/07/29 09:13:06  jcastillo
+// Correct bit 28 of CASR
+//
 // Revision 1.1  2004/09/23 09:43:06  jcastillo
 // Verilog first import
 //
@@ -88,7 +91,7 @@ always @(posedge clk or negedge reset)
 
          begin
 
-         CASR_varCASR [36:31]=0;
+         CASR_varCASR [36:32]=0;
          CASR_varCASR [31:0]=seed_i ;
          CASR_reg  = (CASR_varCASR );
 
@@ -109,8 +112,8 @@ always @(posedge clk or negedge reset)
          CASR_outCASR [31]=CASR_varCASR [30]^CASR_varCASR [32];
          CASR_outCASR [30]=CASR_varCASR [29]^CASR_varCASR [31];
          CASR_outCASR [29]=CASR_varCASR [28]^CASR_varCASR [30];
-         CASR_outCASR [28]=CASR_varCASR [27]^CASR_varCASR [28]^CASR_varCASR [29];
-         CASR_outCASR [27]=CASR_varCASR [26]^CASR_varCASR [28];
+         CASR_outCASR [28]=CASR_varCASR [27]^CASR_varCASR [29];
+         CASR_outCASR [27]=CASR_varCASR [26]^CASR_varCASR [27]^CASR_varCASR [28];
          CASR_outCASR [26]=CASR_varCASR [25]^CASR_varCASR [27];
          CASR_outCASR [25]=CASR_varCASR [24]^CASR_varCASR [26];
          CASR_outCASR [24]=CASR_varCASR [23]^CASR_varCASR [25];
@@ -172,7 +175,7 @@ always @(posedge clk or negedge reset)
 
          begin
 
-         LFSR_varLFSR [42:31]=0;
+         LFSR_varLFSR [42:32]=0;
          LFSR_varLFSR [31:0]=seed_i ;
          LFSR_reg  = (LFSR_varLFSR );
 

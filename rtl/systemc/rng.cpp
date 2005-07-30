@@ -46,6 +46,9 @@
 // CVS Revision History
 //
 // $Log: not supported by cvs2svn $
+// Revision 1.4  2005/07/29 09:12:41  jcastillo
+// Correct bit 28 of CASR
+//
 // Revision 1.3  2004/09/23 09:45:30  jcastillo
 // Macro removed
 //
@@ -86,7 +89,7 @@ rng::LFSR ()
     {
       if (loadseed_i.read ())
 	{
-	  LFSR_var.range (42, 31) = 0;
+	  LFSR_var.range (42, 32) = 0;
 	  LFSR_var.range (31, 0) = seed_i.read ();
 	  LFSR_reg.write (LFSR_var);
 
@@ -159,7 +162,7 @@ rng::CASR ()
     {
       if (loadseed_i.read ())
 	{
-	  CASR_var.range (36, 31) = 0;
+	  CASR_var.range (36, 32) = 0;
 	  CASR_var.range (31, 0) = seed_i.read ();
 	  CASR_reg.write (CASR_var);
 
@@ -176,8 +179,8 @@ rng::CASR ()
 	  CASR_out[31] = CASR_var[30] ^ CASR_var[32];
 	  CASR_out[30] = CASR_var[29] ^ CASR_var[31];
 	  CASR_out[29] = CASR_var[28] ^ CASR_var[30];
-	  CASR_out[28] = CASR_var[27] ^ CASR_var[28] ^ CASR_var[29];
-	  CASR_out[27] = CASR_var[26] ^ CASR_var[28];
+	  CASR_out[28] = CASR_var[27] ^ CASR_var[29];
+	  CASR_out[27] = CASR_var[26] ^ CASR_var[27] ^ CASR_var[28];
 	  CASR_out[26] = CASR_var[25] ^ CASR_var[27];
 	  CASR_out[25] = CASR_var[24] ^ CASR_var[26];
 	  CASR_out[24] = CASR_var[23] ^ CASR_var[25];
