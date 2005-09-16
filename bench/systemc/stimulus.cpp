@@ -11,10 +11,10 @@
 ////   - nothing                                                  ////
 ////                                                              ////
 ////  Author(s):                                                  ////
-////      - Javier Castillo, jcastilo@opencores.org               ////
+////      - Javier Castillo, javier.castillo@urjc.es              ////
 ////                                                              ////
-////  This core is provided by OpenSoc                            ////
-////  http://www.opensocdesign.com                                ////
+////  This core is provided by Universidad Rey Juan Carlos        ////
+////  http://www.escet.urjc.es/~jmartine                          ////
 ////                                                              ////
 //////////////////////////////////////////////////////////////////////
 ////                                                              ////
@@ -46,6 +46,9 @@
 // CVS Revision History
 //
 // $Log: not supported by cvs2svn $
+// Revision 1.2  2004/08/30 17:02:57  jcastillo
+// Used indent command
+//
 // Revision 1.2  2004/08/30 17:01:50  jcastillo
 // Used indent command
 //

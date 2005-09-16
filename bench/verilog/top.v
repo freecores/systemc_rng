@@ -11,7 +11,7 @@
 ////   - done                                                     ////
 ////                                                              ////
 ////  Author(s):                                                  ////
-////      - Javier Castillo, jcastilo@opencores.org               ////
+////      - Javier Castillo, javier.castillo@urjc.es              ////
 ////                                                              ////
 //////////////////////////////////////////////////////////////////////
 ////                                                              ////
@@ -43,6 +43,9 @@
 // CVS Revision History
 //
 // $Log: not supported by cvs2svn $
+// Revision 1.1  2004/09/23 09:45:06  jcastillo
+// Verilog first import
+//
 
 `timescale 10ns/1ns
 

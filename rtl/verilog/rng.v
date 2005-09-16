@@ -12,7 +12,10 @@
 ////   - done                                                     ////
 ////                                                              ////
 ////  Author(s):                                                  ////
-////   - Javier Castillo, jcastilo@opencores.org                  ////
+////      - Javier Castillo, javier.castillo@urjc.es              ////
+////                                                              ////
+////  This core is provided by Universidad Rey Juan Carlos        ////
+////  http://www.escet.urjc.es/~jmartine                          ////
 ////                                                              ////
 //////////////////////////////////////////////////////////////////////
 ////                                                              ////
@@ -44,6 +47,9 @@
 // CVS Revision History
 //
 // $Log: not supported by cvs2svn $
+// Revision 1.3  2005/07/30 20:07:26  jcastillo
+// Correct bit 28. Correct assignation to bit 31
+//
 // Revision 1.2  2005/07/29 09:13:06  jcastillo
 // Correct bit 28 of CASR
 //
